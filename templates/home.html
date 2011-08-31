@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<ul>
+{% for char in chars %}
+<li>{{ modules.Char(char) }}</li>
+{% end %}
+</ul>
+{% end block %}
