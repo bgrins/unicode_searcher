@@ -58,9 +58,12 @@ class HomeHandler(BaseHandler):
     	c = self.db.cursor()
     	c.execute('SELECT cf, na1 FROM ucd limit 10')
     	
-    	chars = []
-    	for row in c:
-    		chars.append(dict(id=row[0], name=row[1] or "no name"))
+    	chars = map (Char, c)
+    	
+    	
+    	#chars = []
+    	#for row in c:
+    	#	chars.append(Char(row))
         
         print chars
         self.render("home.html", chars=chars )
@@ -72,7 +75,7 @@ class CharHandler(BaseHandler):
     	
     	chars = []
     	for row in c:
-    		chars.append(dict(id=row[0], name=row[1]))
+    		chars.append(Char(row))
     		
         if not chars: raise tornado.web.HTTPError(404)
         self.render("char.html", char=chars[0])
@@ -81,6 +84,12 @@ class CharModule(tornado.web.UIModule):
     def render(self, char):
         return self.render_string("modules/char.html", char=char)
 
+class Char():
+    def __init__(self, param):
+    	self.id=param[0]
+    	self.name=param[1]
+    	print self.id
+	
 def main():
     tornado.options.parse_command_line()
     http_server = tornado.httpserver.HTTPServer(Application())
