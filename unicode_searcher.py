@@ -26,7 +26,7 @@ class Application(tornado.web.Application):
 			(r"/char/([^/]+)", CharHandler)
 		]
 		settings = dict(
-			blog_title=u"Tornado Blog",
+			title=u"Find Unicode Characters",
 			template_path=os.path.join(os.path.dirname(__file__), "templates"),
 			static_path=os.path.join(os.path.dirname(__file__), "static"),
 			ui_modules={"Char": CharModule},
