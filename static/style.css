@@ -206,9 +206,30 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
+#narrow-header, #header {
+	border-bottom: solid 2px #99d;
+	padding:3px;
+}
+#narrow-header {
+	text-align: right;
+}
 
-
-
+#char-sidebar, #char-main {
+	padding: 5px; 
+}
+#char-sidebar { 
+	float: left; 
+	width: 200px; 
+}
+#char-main { 
+	margin-left: 200px;
+	background: #f9f9fa; 
+	padding-bottom:200px;
+	border-left: solid 2px #bbd;
+}
+#char-container { 
+	border-bottom: solid 2px #bbd; 
+}
 
 .chars { }
 .chars li { 
@@ -276,14 +297,6 @@ td { vertical-align: top; }
 	border: solid 2px green;
 }
 
-#narrow-header, #header {
-	border-bottom: solid 2px #bbd;
-	padding:3px;
-	margin-bottom: 5px;
-}
-#narrow-header {
-	text-align: right;
-}
 
 #search-container, #examples {
 	width: 600px;

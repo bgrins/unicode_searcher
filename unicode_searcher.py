@@ -70,17 +70,13 @@ class SearchHandler(BaseHandler):
 class CharHandler(BaseHandler):
 	def get(self, id):
 		c = self.db.cursor()
-		
-		if helpers.is_hex_or_decimal(id):
-			c.execute('SELECT * FROM ucd where cf=? limit 1', (id,))
-		else:
-			c.execute("SELECT * FROM ucd where na1 like ? limit 1000", ['%'+id+'%'])
-		
-		chars = map (Char, c)
+		row = c.execute('SELECT * FROM ucd where cf=? limit 1', (id,)).fetchall()
+		print row
 		 	
-		if not chars: raise tornado.web.HTTPError(404)
+		if not row: raise tornado.web.HTTPError(404)
 		
-		self.render("char.html", chars=chars)
+		char = Char(row[0]);
+		self.render("char.html", char=char, q = char.na1)
 
 class CharModule(tornado.web.UIModule):
 	def render(self, char):

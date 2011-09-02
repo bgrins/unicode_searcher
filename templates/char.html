@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 
 {% block body %}
+<div id='char-container' class='clearfix'>
+<div id='char-sidebar'>
+	{{ char.na1 }}
+</div>
+<div id='char-main'>
   {{ modules.Char(char) }}
+</div>
+</div>
 {% end %}
