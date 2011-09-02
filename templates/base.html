@@ -10,7 +10,7 @@
     <div id="body">
       <div id="header">
       	<div style="float:right;">
-      		<form method="get" action="search">
+      		<form method="get" action="/search/" id='search'>
       			<input type='text' autofocus placeholder='Search for characters' name='q' />
       			<input type='submit' value='go' />
       		</form>
@@ -23,12 +23,6 @@
     
     <script type="text/javascript" src="{{ static_url("jquery-1.6.2.js") }}"></script>
     <script type="text/javascript" src="{{ static_url("jquery.form.js") }}"></script>
-    
-    <script>
-    
-    	$(function() {
-    	
-    	});
-    </script> 
+    <script type="text/javascript" src="{{ static_url("app.js") }}"></script>
   </body>
 </html>

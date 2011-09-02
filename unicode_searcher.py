@@ -60,7 +60,7 @@ class SearchHandler(BaseHandler):
 		
 		if not search: self.redirect('/')
 		
-		if helpers.is_hex_or_decimal(search):
+		if len(search) > 3 and helpers.is_hex_or_decimal(search):
 			c.execute('SELECT * FROM ucd where cf=? limit 1', (search,))
 		else:
 			c.execute("SELECT * FROM ucd where na1 like ? limit 1000", ['%'+search+'%'])
