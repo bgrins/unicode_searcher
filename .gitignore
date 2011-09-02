@@ -2,3 +2,4 @@ ucd2.sqlite
 supervisord.conf
 char.pyc
 helpers.pyc
+utilities/ucd.all.flat.xml
