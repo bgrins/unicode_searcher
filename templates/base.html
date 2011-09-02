@@ -4,19 +4,31 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
     <title>{{ escape(handler.settings["blog_title"]) }}</title>
     <link rel="stylesheet" href="{{ static_url("blog.css") }}" type="text/css"/>
-    <link rel="alternate" href="/feed" type="application/atom+xml" title="{{ escape(handler.settings["blog_title"]) }}"/>
     {% block head %}{% end %}
   </head>
   <body>
     <div id="body">
       <div id="header">
-        <div style="float:right">
-        
-        </div>
+      	<div style="float:right;">
+      		<form method="get" action="search">
+      			<input type='text' autofocus placeholder='Search for characters' name='q' />
+      			<input type='submit' value='go' />
+      		</form>
+      	</div>
         <h1><a href="/">{{ escape(handler.settings["blog_title"]) }}</a></h1>
       </div>
       <div id="content">{% block body %}{% end %}</div>
     </div>
     {% block bottom %}{% end %}
+    
+    <script type="text/javascript" src="{{ static_url("jquery-1.6.2.js") }}"></script>
+    <script type="text/javascript" src="{{ static_url("jquery.form.js") }}"></script>
+    
+    <script>
+    
+    	$(function() {
+    	
+    	});
+    </script> 
   </body>
 </html>

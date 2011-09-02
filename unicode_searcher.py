@@ -22,7 +22,7 @@ class Application(tornado.web.Application):
 	def __init__(self):
 		handlers = [
 			(r"/", HomeHandler),
-			(r"/search/name/([^/]+)", SearchNameHandler),
+			(r"/search/", SearchHandler),
 			(r"/char/([^/]+)", CharHandler)
 		]
 		settings = dict(
@@ -51,18 +51,26 @@ class HomeHandler(BaseHandler):
 		chars = map (Char, c)
 		self.render("home.html", chars=chars )
 		
-class SearchNameHandler(BaseHandler):
-	def get(self, name):
+class SearchHandler(BaseHandler):
+	def get(self):
 		c = self.db.cursor()
 		
-		if name:
-			c.execute("SELECT * FROM ucd where na1 like ? limit 1000", ['%'+name+'%'])
+		search = self.get_argument("q", None)
+		partial = self.get_argument("partial", None)
 		
+		if not search: self.redirect('/')
+		
+		if helpers.is_hex_or_decimal(search):
+			c.execute('SELECT * FROM ucd where cf=? limit 1', (search,))
+		else:
+			c.execute("SELECT * FROM ucd where na1 like ? limit 1000", ['%'+search+'%'])
+					
 		chars = map (Char, c)
 		
 		if not chars: raise tornado.web.HTTPError(404)
 		
-		self.render("chars.html", chars=chars )
+		if partial: self.render("chars.html", chars=chars)
+		else: self.render("home.html", chars=chars )
 
 class CharHandler(BaseHandler):
 	def get(self, id):
