@@ -71,8 +71,7 @@ class CharHandler(BaseHandler):
 	def get(self, id):
 		c = self.db.cursor()
 		row = c.execute('SELECT * FROM ucd where cf=? limit 1', (id,)).fetchall()
-		print row
-		 	
+		
 		if not row: raise tornado.web.HTTPError(404)
 		
 		char = Char(row[0]);

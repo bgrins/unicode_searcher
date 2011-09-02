@@ -3,10 +3,38 @@
 {% block body %}
 <div id='char-container' class='clearfix'>
 <div id='char-sidebar'>
-	{{ char.na1 }}
+	<h2>{{ escape(char.na1) }}</h2>
+	<table>
+		<tr><td>Hex</td><td>{{ escape(char.cf) }}</td></tr>
+		<tr><td>Decimal</td><td>{{ escape(char.cf) }}</td></tr>
+	</table>
+	
 </div>
 <div id='char-main'>
-  {{ modules.Char(char) }}
+	<div id='char-links'>
+		<a href='#'>Similar symbols</a>
+	</div>
+	<div id='char-main-inner'>
+	<ul class='small-previews clearfix'>
+		<li class='arial'>{{ "&#x" + char.cf + ";" }}</li>
+		<li class='courier'>{{ "&#x" + char.cf + ";" }}</li>
+		<li class='comic'>{{ "&#x" + char.cf + ";" }}</li>
+		<li class='georgia'>{{ "&#x" + char.cf + ";" }}</li>
+		<li class='impact'>{{ "&#x" + char.cf + ";" }}</li>
+		<li class='lucidaconsole'>{{ "&#x" + char.cf + ";" }}</li>
+		<li class='lucidaunicode'>{{ "&#x" + char.cf + ";" }}</li>
+		<li class='palatino'>{{ "&#x" + char.cf + ";" }}</li>
+		<li class='tahoma'>{{ "&#x" + char.cf + ";" }}</li>
+		<li class='times'>{{ "&#x" + char.cf + ";" }}</li>
+		<li class='trebuchet'>{{ "&#x" + char.cf + ";" }}</li>
+		<li class='verdana'>{{ "&#x" + char.cf + ";" }}</li>
+		<li class='symbol'>{{ "&#x" + char.cf + ";" }}</li>
+		<li class='webdings'>{{ "&#x" + char.cf + ";" }}</li>
+	</ul>
+	
+	<div class='big-preview'>
+		{{ "&#x" + char.cf + ";" }}
+	</div>
 </div>
 </div>
 {% end %}

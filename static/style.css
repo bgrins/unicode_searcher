@@ -214,7 +214,7 @@ td { vertical-align: top; }
 	text-align: right;
 }
 
-#char-sidebar, #char-main {
+#char-sidebar, #char-main-inner {
 	padding: 5px; 
 }
 #char-sidebar { 
@@ -230,7 +230,18 @@ td { vertical-align: top; }
 #char-container { 
 	border-bottom: solid 2px #bbd; 
 }
-
+#char-links {
+	background: #fff;
+	border-bottom: solid 2px #bbd; 
+}
+#char-sidebar table {
+	width: 100%;
+}
+#char-sidebar h2 {
+	margin:0;
+	margin-top: 3px;
+	padding:0;
+}
 .chars { }
 .chars li { 
 	width: 200px; height: 200px; 
@@ -283,6 +294,56 @@ td { vertical-align: top; }
 	
 }
 
+.small-previews {
+	padding:0;
+	margin:0 auto;
+	width:730px;
+}
+
+.small-previews li {
+	border: dashed 1px #ddf;
+	margin:0 5px;
+	padding:0;
+	height:40px;
+	width:40px;
+	line-height:40px;
+	font-size:30px;
+	text-align:center;
+	list-style: none;
+	float:left;
+}
+
+li.active { border: solid 1px #99a; }
+li.arial { font-family: Arial, Helvetica, sans-serif; }
+li.courier { font-family: 'Courier New', Courier, monospace; }
+li.comic { font-family: 'Comic Sans MS', Textile, cursive; }
+li.georgia { font-family: Georgia, 'Times New Roman', Times, serif; }
+li.impact { font-family: Impact, Charcoal, sans-serif; }
+li.lucidaconsole {font-family: 'Lucida Console', Monaco, monospace; }
+li.lucidaunicode {font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;}
+li.palatino {font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;}
+li.tahoma { font-family: Tahoma, Geneva, sans-serif; }
+li.times {font-family: 'Times New Roman', Times, serif;}
+li.trebuchet {font-family: 'Trebuchet MS', Helvetica, sans-serif; }
+li.verdana { font-family: Verdana, Geneva, sans-serif; }
+li.symbol {font-family: Symbol;}
+li.webdings { font-family: Webdings; }
+li.wingdings { font-family: Wingdings, 'Zapf Dingbats'; }
+
+.big-preview {
+	margin:0 auto;
+	display:block;
+	width: 100px;
+	background: white;
+	color: #333;
+	padding: 10px;
+	text-align:center;
+	font-size: 80px;
+	line-height: 100px;
+	height: 100px;
+	border: solid 1px #99a;
+
+}
 .chars .preview {
 	display:block;
 	margin:0 auto;
