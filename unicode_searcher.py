@@ -33,6 +33,7 @@ class Application(tornado.web.Application):
 			xsrf_cookies=True,
 			cookie_secret="11oETzKXQAGaYdkL5gEmGeJJFuYh7EQnp2XdTP1o/Vo=",
 			autoescape=None,
+			q=None
 		)
 		tornado.web.Application.__init__(self, handlers, **settings)
 
@@ -45,11 +46,7 @@ class BaseHandler(tornado.web.RequestHandler):
 
 class HomeHandler(BaseHandler):
 	def get(self):
-		c = self.db.cursor()
-		c.execute('SELECT * FROM ucd limit 100')
-		
-		chars = map (Char, c)
-		self.render("home.html", chars=chars )
+		self.render("home.html")
 		
 class SearchHandler(BaseHandler):
 	def get(self):
@@ -67,10 +64,8 @@ class SearchHandler(BaseHandler):
 					
 		chars = map (Char, c)
 		
-		if not chars: raise tornado.web.HTTPError(404)
-		
 		if partial: self.render("chars.html", chars=chars)
-		else: self.render("results.html", chars=chars )
+		else: self.render("results.html", chars=chars, q=search )
 
 class CharHandler(BaseHandler):
 	def get(self, id):

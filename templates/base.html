@@ -14,14 +14,15 @@
 <body>
 	<div id="body">
 	  {% block header %}
-	  <div id="header">
-	  	<div style="float:right;">
-	  		<form method="get" action="/search/" id='search'>
-	  			<input type='text' autofocus placeholder='Search for characters' name='q' />
-	  			<input type='submit' value='go' />
-	  		</form>
-	  	</div>
-	    <h1><a href="/">{{ escape(handler.settings["title"]) }}</a></h1>
+	  <div id="header" class='clearfix'>
+		<h1><a href='/'>Unicode Finder</a></h1>
+	  
+		<div id='search-container'>
+			<form method="get" action="/search/" id='search'>
+			    <input type='text' placeholder='Search for characters' name='q' id='q' value={{ q or None }} />
+			    <input type='submit' value='Find Characters' />
+			</form>
+		</div>
 	  </div>
 	  {% end %}
 	  <div id="content">{% block body %}{% end %}</div>

@@ -1,13 +1,23 @@
 {% extends "base.html" %}
 
 {% block header %}
-
+<div id='narrow-header'>
+	<a href='#'>about</a>
+</div>
 {% end block %}
 
 {% block body %}
-<ul id='chars' class='clearfix chars'>
-{% for char in chars %}
-<li>{{ modules.Char(char) }}</li>
-{% end %}
-</ul>
+
+<div id='search-container'>
+<h1><a href='/'>Unicode Finder</a></h1>
+<form method="get" action="/search/" id='search'>
+    <input type='text' autofocus placeholder='Search for characters' name='q' id='q' />
+    <input type='submit' value='Find Characters' />
+</form>
+</div>
+
+<div id='examples'>
+	try: <br />
+	<a href='/search/?q=arrow'>arrow</a> | <a href='/search/?q=transfinite'>transfinite</a> | <a href='/search/?q=greater'>greater</a>
+</div>
 {% end block %}
