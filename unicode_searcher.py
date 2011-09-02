@@ -33,6 +33,22 @@ class Application(tornado.web.Application):
 			xsrf_cookies=True,
 			cookie_secret="11oETzKXQAGaYdkL5gEmGeJJFuYh7EQnp2XdTP1o/Vo=",
 			autoescape=None,
+			fonts = [
+				["Arial", "arial"],
+				["Courier", "courier"],
+				["comic","comic"],
+				["georgia","georgia"],
+				["impact","impact"],
+				["console","lucidaconsole"],
+				["unicode","lucidaunicode"],
+				["palatino","palatino"],
+				["tahoma","tahoma"],
+				["times","times"],
+				["trebuchet","trebuchet"],
+				["verdana","verdana"],
+				["symbol","symbol"],
+				["webdings","webdings"]
+			],
 			q=None
 		)
 		tornado.web.Application.__init__(self, handlers, **settings)

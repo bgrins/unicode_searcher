@@ -15,22 +15,32 @@
 		<a href='#'>Similar symbols</a>
 	</div>
 	<div id='char-main-inner'>
-	<ul class='small-previews clearfix'>
-		<li class='arial'>{{ "&#x" + char.cf + ";" }}</li>
-		<li class='courier'>{{ "&#x" + char.cf + ";" }}</li>
-		<li class='comic'>{{ "&#x" + char.cf + ";" }}</li>
-		<li class='georgia'>{{ "&#x" + char.cf + ";" }}</li>
-		<li class='impact'>{{ "&#x" + char.cf + ";" }}</li>
-		<li class='lucidaconsole'>{{ "&#x" + char.cf + ";" }}</li>
-		<li class='lucidaunicode'>{{ "&#x" + char.cf + ";" }}</li>
-		<li class='palatino'>{{ "&#x" + char.cf + ";" }}</li>
-		<li class='tahoma'>{{ "&#x" + char.cf + ";" }}</li>
-		<li class='times'>{{ "&#x" + char.cf + ";" }}</li>
-		<li class='trebuchet'>{{ "&#x" + char.cf + ";" }}</li>
-		<li class='verdana'>{{ "&#x" + char.cf + ";" }}</li>
-		<li class='symbol'>{{ "&#x" + char.cf + ";" }}</li>
-		<li class='webdings'>{{ "&#x" + char.cf + ";" }}</li>
-	</ul>
+		<table class='small-previews2'>
+			<tr>	
+				<th></th>
+				{% for f in handler.settings["fonts"] %}
+					<th>{{ f[0] }}</th>
+				{% end for %}
+			</tr>
+			<tr>
+				<td class='font-type'>Normal</td>
+				{% for f in handler.settings["fonts"] %}
+					<td class='{{ f[1] }}'>{{ "&#x" + char.cf + ";" }}</td> 
+				{% end for %}
+			</tr>
+			<tr class='bold'>
+				<td class='font-type'>Bold</td>
+				{% for f in handler.settings["fonts"] %}
+					<td class='{{ f[1] }}'>{{ "&#x" + char.cf + ";" }}</td> 
+				{% end for %}
+			</tr>
+			<tr class='italic'>
+				<td class='font-type'>Italic</td>
+				{% for f in handler.settings["fonts"] %}
+					<td class='{{ f[1] }}'>{{ "&#x" + char.cf + ";" }}</td> 
+				{% end for %}
+			</tr>
+		</table>
 	
 	<div class='big-preview'>
 		{{ "&#x" + char.cf + ";" }}

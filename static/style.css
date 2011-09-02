@@ -294,13 +294,12 @@ td { vertical-align: top; }
 	
 }
 
-.small-previews {
-	padding:0;
-	margin:0 auto;
-	width:730px;
-}
-
-.small-previews li {
+.small-previews td.
+.small-previews2 tr.bold { font-weight:bold; }
+.small-previews2 tr.italic { font-style:italic; }
+.small-previews2 th { text-align: center; width:40px; overflow:hidden; }
+.small-previews2 th, .small-previews2 .font-type { font-size:10px; background: #333; color: white; }
+.small-previews2 td {
 	border: dashed 1px #ddf;
 	margin:0 5px;
 	padding:0;
@@ -310,25 +309,25 @@ td { vertical-align: top; }
 	font-size:30px;
 	text-align:center;
 	list-style: none;
-	float:left;
 }
 
-li.active { border: solid 1px #99a; }
-li.arial { font-family: Arial, Helvetica, sans-serif; }
-li.courier { font-family: 'Courier New', Courier, monospace; }
-li.comic { font-family: 'Comic Sans MS', Textile, cursive; }
-li.georgia { font-family: Georgia, 'Times New Roman', Times, serif; }
-li.impact { font-family: Impact, Charcoal, sans-serif; }
-li.lucidaconsole {font-family: 'Lucida Console', Monaco, monospace; }
-li.lucidaunicode {font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;}
-li.palatino {font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;}
-li.tahoma { font-family: Tahoma, Geneva, sans-serif; }
-li.times {font-family: 'Times New Roman', Times, serif;}
-li.trebuchet {font-family: 'Trebuchet MS', Helvetica, sans-serif; }
-li.verdana { font-family: Verdana, Geneva, sans-serif; }
-li.symbol {font-family: Symbol;}
-li.webdings { font-family: Webdings; }
-li.wingdings { font-family: Wingdings, 'Zapf Dingbats'; }
+.small-previews2 td.active, .small-previews2 td:hover { border: solid 1px #99a; background: #fff; }
+
+td.arial { font-family: Arial, Helvetica, sans-serif; }
+td.courier { font-family: 'Courier New', Courier, monospace; }
+td.comic { font-family: 'Comic Sans MS', Textile, cursive; }
+td.georgia { font-family: Georgia, 'Times New Roman', Times, serif; }
+td.impact { font-family: Impact, Charcoal, sans-serif; }
+td.lucidaconsole {font-family: 'Lucida Console', Monaco, monospace; }
+td.lucidaunicode {font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;}
+td.palatino {font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;}
+td.tahoma { font-family: Tahoma, Geneva, sans-serif; }
+td.times {font-family: 'Times New Roman', Times, serif;}
+td.trebuchet {font-family: 'Trebuchet MS', Helvetica, sans-serif; }
+td.verdana { font-family: Verdana, Geneva, sans-serif; }
+td.symbol {font-family: Symbol;}
+td.webdings { font-family: Webdings; }
+td.wingdings { font-family: Wingdings, 'Zapf Dingbats'; }
 
 .big-preview {
 	margin:0 auto;
