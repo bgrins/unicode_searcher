@@ -1,3 +1,8 @@
-<div class="char">
-{{ escape(char.na1) }} - {{ escape(char.cf) }} - {{ "&#x" + char.cf + ";" }}
+<div>
+	<span class='title'>{{ escape(char.na1) }}</span> 
+	<span class='preview'>{{ "&#x" + char.cf + ";" }}</span>
+	<span class='codes clearfix'>
+		<span class='hex'><span>{{ escape("&#x" + char.cf) }}</span></span>
+		<span class='decimal'><span>{{ escape("&#" + char.cf) }}</span></span>
+	</span>
 </div>

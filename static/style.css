@@ -216,7 +216,71 @@ td { vertical-align: top; }
 
 
 
+.chars { }
+.chars li { 
+	width: 200px; height: 200px; 
+	border-radius: 5px; 
+	background: #333; 
+	color: white; 
+	float:left;
+	margin: 10px;
+	padding: 5px;
+	position:relative;
+}
+.chars .title {
+	display:block;
+	height: 40px;
+	margin-bottom:10px;
+	font-family: Tahoma;
+	text-align: center;
+	border-bottom: solid 4px #fff;
+}
+.chars .codes {
+	display:block; 
+	padding: 5px 0;
+	position:absolute;
+	bottom:0;
+	left:0; 
+	width: 210px;
+	background: #888;
+}
+.chars .codes .hex:before, .chars .codes .decimal:before {
+	display:block;
+	font-family: Verdana;
+	margin-bottom:3px;
+}
+.chars .codes .hex:before 		{ content: 'hex'; }
+.chars .codes .decimal:before 	{ content: 'decimal'; }
 
+.chars .codes .hex, .chars .codes .decimal {
+	font-family: monospace;
+	color: #000;
+	width:50%; 
+	text-align: center;
+	float:left; 
+	display:block;
+}
+.chars .codes .hex span, .chars .codes .decimal span {
+	background: #ddd;
+	padding: 5px;
+	display:inline-block;
+	border-top: none;
+	
+}
+
+.chars .preview {
+	display:block;
+	margin:0 auto;
+	width: 60px;
+	background: white;
+	color: #333;
+	padding: 10px;
+	text-align:center;
+	font-size: 40px;
+	line-height: 60px;
+	height: 60px;
+	border: solid 2px green;
+}
 
 
 
