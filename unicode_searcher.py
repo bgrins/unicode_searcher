@@ -70,7 +70,7 @@ class SearchHandler(BaseHandler):
 		if not chars: raise tornado.web.HTTPError(404)
 		
 		if partial: self.render("chars.html", chars=chars)
-		else: self.render("home.html", chars=chars )
+		else: self.render("results.html", chars=chars )
 
 class CharHandler(BaseHandler):
 	def get(self, id):
