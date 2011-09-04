@@ -80,8 +80,9 @@ class SearchHandler(BaseHandler):
 					
 		chars = map (Char, c)
 		
-		if partial: self.render("chars.html", chars=chars)
-		else: self.render("results.html", chars=chars, q=search )
+		#if partial: self.render("chars.html", chars=chars)
+		#else: self.render("results.html", chars=chars, q=search )
+		self.render("results.html", chars=chars, q=search )
 
 class CharHandler(BaseHandler):
 	def get(self, id):

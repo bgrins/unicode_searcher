@@ -16,18 +16,14 @@ window.log = function(){
             
 $(function() {
     
-    $("#search").append("<input id='partial' name='partial' value='true' type='hidden' />");
-    $("#search").ajaxForm({
-		target:        '#chars',
-    });
+    //$("#search").append("<input id='partial' name='partial' value='true' type='hidden' />");
+    //$("#search").ajaxForm({
+	//	target:        '#chars',
+    //});
     
-colorPicker.exportColor = function() {
-	$(".small-previews2").css("color", "rgb(" + colorPicker.CP.rgbRND + ")");
-}
-
-   /*
-   	$("#color").change(function() {
-   		$(".small-previews2").css("color", $(this).val())
-   	});
-   	*/ 
+	$("#color").spectrum({
+		move: function(colors) {
+			$(".small-previews2").css("color", colors.hex);
+		}
+	});
 });
